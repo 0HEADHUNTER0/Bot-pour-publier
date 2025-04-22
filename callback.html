@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirection OAuth TikTok</title>
+</head>
+<body>
+    <h1>Redirection OAuth TikTok</h1>
+    <p>Vous avez été redirigé ici après avoir autorisé l'application. Le code d'autorisation est ci-dessous :</p>
+
+    <p><strong>Code d'Autorisation :</strong> <span id="authCode">Chargement...</span></p>
+
+    <script>
+        // Récupérer le code d'autorisation depuis l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const authCode = urlParams.get('code');
+
+        if (authCode) {
+            document.getElementById('authCode').textContent = authCode;
+        } else {
+            document.getElementById('authCode').textContent = 'Aucun code trouvé. Vérifiez l\'URL.';
+        }
+    </script>
+</body>
+</html>
